@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- ================================= Fabricated ==================================== -->
+<ThingDef ParentName="BaseHumanMakeableGun">
+	<defName>Gun_FireballGrenadeLauncher</defName>
+	<label>Fireball Launcher</label>
+    <description>A wide-barreled multi launcher. The shells create heavy incendiary explosions on impact. The quickshot mechanism can burst out up to 5 grenades at once. A technical marvel and real beauty for any heavy gunner.\n\nLost Forsaken Tech.</description>
+	<graphicData>
+      <texPath>Things/Weapons/Fireball_Cannon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<soundInteract>Interact_Rifle</soundInteract>
+	<generateCommonality>0.05</generateCommonality>
+	<statBases>
+		<WorkToMake>12500</WorkToMake>
+		<Mass>3.4</Mass>
+		<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+		<MarketValue>1337</MarketValue>
+	</statBases>
+	<techLevel>Spacer</techLevel> <!-- Ultra -->
+	<costList>
+		<Uranium>25</Uranium>
+		<Plasteel>125</Plasteel>
+		<ComponentSpacer>3</ComponentSpacer>
+	</costList>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <weaponTags>
+      <li>SpacerGun</li> <!-- GunHeavy -->
+	</weaponTags>
+	<equippedStatOffsets>
+      <TradePriceImprovement>0.10</TradePriceImprovement>
+	</equippedStatOffsets>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>14</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+	</recipeMaker>
+    <verbs>
+	  <li>
+		<verbClass>Verb_Shoot</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<defaultProjectile>Bullet_FireballGrenadeLauncher</defaultProjectile>
+		<warmupTime>1.5</warmupTime>
+		<range>33.9</range>
+		<forcedMissRadius>1.9</forcedMissRadius>
+		<burstShotCount>5</burstShotCount>
+		<soundCast>Shot_IncendiaryLauncher</soundCast>
+		<soundCastTail>GunTail_Medium</soundCastTail>
+		<muzzleFlashScale>14</muzzleFlashScale>
+		<targetParams>
+			<canTargetLocations>true</canTargetLocations>
+		</targetParams>
+	  </li>
+	</verbs>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+</ThingDef>
+
+<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_FireballGrenadeLauncher</defName>
+    <label>incendiary quantumbolt</label>
+    <graphicData>
+      <texPath>Things/Projectile/Shots/InfernoCannonFireball</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <speed>50</speed>
+      <damageDef>InfernoBlaze</damageDef> <!-- Flame -->
+      <damageAmountBase>17</damageAmountBase>
+      <explosionRadius>1.75</explosionRadius>
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+      <ai_IsIncendiary>true</ai_IsIncendiary>
+    </projectile>
+</ThingDef>
+
+<!-- ================================= Fabricated ==================================== -->
+  <ThingDef ParentName="BaseMakeableGrenade">
+    <defName>Weapon_GrenadeWarhead</defName>
+    <label>Atomic Bomb</label>
+    <description>Grenade with an ultra-tech warhead powered by a grain of evaine antimatter. Usually used by forsaken grenadiers and war machines, it creates a huge explosion and starts fires around the detonation point.\n\nFragile and dangerous. Handle with care.</description>
+	<tickerType>Normal</tickerType>
+	<graphicData>
+		<texPath>Things/Projectile/Special/GrenadeAtomicBomb</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<soundInteract>Interact_Grenade</soundInteract>
+    <tradeability>Sellable</tradeability>
+	<techLevel>Ultra</techLevel>
+	<costList>
+		<Uranium>500</Uranium>
+		<Shell_AntigrainWarhead>5</Shell_AntigrainWarhead>
+		<ComponentSpacer>2</ComponentSpacer>
+	</costList>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+	<thingCategories>
+		<li>Grenades</li>
+	</thingCategories>
+	<statBases>
+	  <Mass>50</Mass>
+	  <WorkToMake>50000</WorkToMake>
+      <MarketValue>1986</MarketValue>
+    </statBases>
+	<equippedStatOffsets>
+      <MoveSpeed>-0.25</MoveSpeed> <!-- 0.12 -->
+	</equippedStatOffsets>
+	<recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+	   <skillRequirements>
+        <Crafting>20</Crafting>
+      </skillRequirements>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+	  <researchPrerequisite>ShipReactor</researchPrerequisite>
+	</recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>9.9</explosiveRadius>
+        <explosiveDamageType>BombSuper</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+        <chanceToStartFire>0.22</chanceToStartFire>
+        <damageFalloff>true</damageFalloff>
+        <explosionEffect>GiantExplosion</explosionEffect>
+        <explosionSound>Explosion_GiantBomb</explosionSound>
+        <wickTicks>
+          <min>60</min> <!-- 60 120 -->
+          <max>120</max>
+        </wickTicks>
+      </li>
+    </comps>
+	<verbs>
+		<li>
+			<!-- throw elektron bomb -->
+			<verbClass>Verb_LaunchProjectile</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<range>13.9</range>
+			<forcedMissRadius>0.1</forcedMissRadius>
+			<warmupTime>5</warmupTime>
+			<noiseRadius>8</noiseRadius>
+			<ai_AvoidFriendlyFireRadius>11</ai_AvoidFriendlyFireRadius>
+			<ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<soundCast>ThrowGrenade</soundCast>
+			<soundCastTail>Armageddon_ExplosionDrop</soundCastTail>
+			<defaultProjectile>GrenadeWarhead</defaultProjectile>
+			<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			<requireLineOfSight>true</requireLineOfSight>
+			<onlyManualCast>true</onlyManualCast>
+		</li>
+	</verbs>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>GrenadeWarhead</defName>
+    <label>nuclear warhead</label>
+    <graphicData>
+      <texPath>Things/Projectile/Special/GrenadeAtomicBomb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>BombSuper</damageDef>
+      <speed>25</speed>
+      <explosionRadius>9.9</explosionRadius>
+      <explosionChanceToStartFire>0.22</explosionChanceToStartFire>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <explosionEffect>GiantExplosion</explosionEffect>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>Explosion_GiantBomb</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+</ThingDef>
+
+</Defs>

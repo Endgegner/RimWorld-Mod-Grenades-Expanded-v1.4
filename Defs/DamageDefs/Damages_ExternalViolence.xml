@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- ==================== Venom ========================== -->
+  <DamageDef ParentName="Bomb">
+	<defName>HornetVenom</defName>
+	<label>hornet stings</label>
+	<workerClass>DamageWorker_Stab</workerClass>
+	<hediff>Trunken_hediff_Stings</hediff>
+	<defaultArmorPenetration>0</defaultArmorPenetration>
+	<defaultDamage>8</defaultDamage>
+	<deathMessage>{0} died to venom.</deathMessage>
+	<defaultStoppingPower>3</defaultStoppingPower>
+	<explosionAffectOutsidePartsOnly>true</explosionAffectOutsidePartsOnly>
+	<explosionCellMote>Mote_BlastDry</explosionCellMote>
+	<explosionColorCenter>(1, 1, 0, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 1, 0.2, 0.1)</explosionColorEdge>
+	<explosionHeatEnergyPerCell>0</explosionHeatEnergyPerCell>
+	<externalViolence>true</externalViolence>
+	<externalViolenceForMechanoids>false</externalViolenceForMechanoids>
+	<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+	<harmsHealth>true</harmsHealth>
+	<makesAnimalsFlee>true</makesAnimalsFlee>
+	<soundExplosion>AngryBees</soundExplosion>
+  </DamageDef>
+<!-- ==================== Toxic ========================== -->
+  <DamageDef ParentName="Flame">
+	<defName>ToxicGasCloud</defName>
+	<label>toxic gas</label>
+	<workerClass>DamageWorker_Flame</workerClass>
+	<hediff>Trunken_hediff_ToxicBrew</hediff>
+    <explosionCellMote>Mote_BlastExtinguisher</explosionCellMote>
+    <explosionColorEdge>(0, 0.5, 0.5, 0.15)</explosionColorEdge>
+	<externalViolence>true</externalViolence>
+	<deathMessage>{0} was killed by toxicity.</deathMessage>
+	<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <harmsHealth>true</harmsHealth>
+    <defaultDamage>2</defaultDamage>
+	<makesAnimalsFlee>true</makesAnimalsFlee>
+	<externalViolenceForMechanoids>true</externalViolenceForMechanoids>
+	<soundExplosion>ShatterGlass</soundExplosion>
+  </DamageDef>
+<!-- ==================== Acid ========================== -->
+  <DamageDef Name="Flame">
+	<defName>GrenadeAcidBomb</defName>
+	<label>acid splash</label>
+	<workerClass>DamageWorker_Flame</workerClass>
+	<hediff>Trunken_hediff_Chemicals</hediff>
+	<hasForcefulImpact>false</hasForcefulImpact>
+	<makesBlood>false</makesBlood>
+	<externalViolence>true</externalViolence>
+	<deathMessage>{0} has given in to acid.</deathMessage>
+	<canInterruptJobs>true</canInterruptJobs>
+    <minDamageToFragment>1</minDamageToFragment>
+    <defaultDamage>4</defaultDamage>
+	<defaultArmorPenetration>0.5</defaultArmorPenetration>
+	<explosionHeatEnergyPerCell>1</explosionHeatEnergyPerCell>
+    <explosionCellMote>Mote_BlastExtinguisher</explosionCellMote>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+    <explosionColorCenter>(0, 1, 0, 0.5)</explosionColorCenter>
+    <explosionColorEdge>(0, 1, 0, 0.1)</explosionColorEdge>
+  </DamageDef>
+<!-- ==================== Poison ========================== -->
+  <DamageDef ParentName="Bomb">
+	<defName>GrenadePoisonIvy</defName>
+	<label>poisonous substance</label>
+    <defaultDamage>7</defaultDamage>
+    <explosionColorCenter>(0, 0.5, 0, 0.5)</explosionColorCenter>
+    <explosionColorEdge>(0.5, 0.5, 0, 0.5)</explosionColorEdge>
+	<additionalHediffs>
+	<li>
+		<hediff>Trunken_hediff_Poison</hediff>
+		<severityPerDamageDealt>0.01</severityPerDamageDealt>
+		<victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+	</li>
+	</additionalHediffs>
+  </DamageDef>
+
+</Defs>
