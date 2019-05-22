@@ -40,7 +40,7 @@
 	<soundExplosion>ShatterGlass</soundExplosion>
   </DamageDef>
 <!-- ==================== Acid ========================== -->
-  <DamageDef Name="Flame">
+  <DamageDef ParentName="Flame">
 	<defName>GrenadeAcidBomb</defName>
 	<label>acid splash</label>
 	<workerClass>DamageWorker_Flame</workerClass>
